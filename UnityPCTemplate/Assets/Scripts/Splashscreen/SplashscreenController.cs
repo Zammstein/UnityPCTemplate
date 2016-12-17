@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// SplashscreenController
@@ -10,6 +9,7 @@ using UnityEngine;
 /// Controller for the splashscreen. The time the screen active can be controlled within the editor.
 /// </summary>
 public class SplashscreenController : MonoBehaviour {
+    #region Publics
     [Header("Splashscreen Controller")]
     [Space(10)]
     [Header("Timing for the Splashscreen")]
@@ -17,6 +17,7 @@ public class SplashscreenController : MonoBehaviour {
     [Space(5)]
     [Header("Scene to load")]
     public LoadingscreenController.Scenes scenes;
+    #endregion
 
     private void Start() {
         StartCoroutine(GoToNextScene(timeScreenIsActive));

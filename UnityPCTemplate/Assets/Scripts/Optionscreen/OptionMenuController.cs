@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using System.Collections;
-using System.Collections.Generic;
 
+/// <summary>
+/// OptionMenuController
+/// <summary>
+/// Author: Thomas van Opstal
+/// <summary>
+/// Controls the switching of panels within the option menu.
+/// </summary>
 public class OptionMenuController : MonoBehaviour {
     public enum OptionPanels {
         GAME_OPTIONS = 0,
@@ -15,34 +18,29 @@ public class OptionMenuController : MonoBehaviour {
     #region Publics
     [Header("Panel To Open First")]
     public OptionPanels firstPanel;
+
     [Space(10)]
+
     [Header("Option Menu Panels")]
     public GameObject gameOptions;
     public GameObject controlOptions;
     public GameObject audioOptions;
     public GameObject graphicsOptions;
-    [Space(10)]
-    [Header("Buttons (same order as panels)")]
-    public GameObject gameButton;
-    public GameObject controlButton;
-    public GameObject audioButton;
-    public GameObject graphicsButton;
     #endregion
 
     #region Privates
     private GameObject[] optionPanels;
-    private GameObject[] optionButtons;
-    private EventSystem eventSystem;
+    private SaveGameManager saveGameManager;
     #endregion
 
     private void Start() {
-        eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         optionPanels = new GameObject[] { gameOptions, controlOptions, audioOptions, graphicsOptions };
-        optionButtons = new GameObject[] { gameButton, controlButton, audioButton, graphicsButton };
         SetActivePanel(firstPanel);
     }
 
     private void SetActivePanel(OptionPanels panel) {
+        saveGameManager.SaveData();
+
         for (int i = 0; i < optionPanels.Length; i++) {
             optionPanels[i].SetActive(false);
         }
@@ -65,6 +63,10 @@ public class OptionMenuController : MonoBehaviour {
 
     public void GraphicsOptions() {
         SetActivePanel(OptionPanels.GRAPHICS_OPTIONS);
+    }
+
+    public void BackToMainMenu() {
+        LoadingscreenController.LoadScene(LoadingscreenController.Scenes.MAIN_MENU);
     }
     #endregion
 }

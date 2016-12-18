@@ -13,11 +13,15 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour {
     #region Publics
     [Header("Main Menu Controller")]
+
     [Space(10)]
+
     [Header("Main Menu Screen Buttons")]
     public bool disableOnClick; //!< This switches the buttons to uninteractable when one is pressed
     public Button[] mainMenuButtons; //!< All the buttons on the main menu
+
     [Space(10)]
+
     [Header("Scenes to Load")]
     public LoadingscreenController.Scenes gameScene;
     public LoadingscreenController.Scenes optionScene;

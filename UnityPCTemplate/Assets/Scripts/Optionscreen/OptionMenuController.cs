@@ -35,6 +35,7 @@ public class OptionMenuController : MonoBehaviour {
 
     private void Start() {
         optionPanels = new GameObject[] { gameOptions, controlOptions, audioOptions, graphicsOptions };
+        saveGameManager = SaveGameManager.instance;
         SetActivePanel(firstPanel);
     }
 

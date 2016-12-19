@@ -20,6 +20,28 @@ public class GameOptions : MonoBehaviour {
         SetValuesFromModel();
     }
 
+    #region On value changed listeners
+    public void OnMouseSensitivitySliderValueChanged() {
+        gameOptionModel.SetMouseSensitivity(mouseSensitivitySlider.value);
+    }
+
+    public void OnControllerSensitivitySliderValueChanged() {
+        gameOptionModel.SetControllerSensitivity(controllerSensitivitySlider.value);
+    }
+
+    public void OnMouseYInvertedValueChanged() {
+        gameOptionModel.SetMouseYInverted(mouseYInverted.isOn);
+    }
+
+    public void OnControllerYInvertedValueChanged() {
+        gameOptionModel.SetControllerYInverted(controllerYInverted.isOn);
+    }
+
+    public void OnToggleCrouchValueChanged() {
+        gameOptionModel.SetHoldToCrouch(toggleCrouch.isOn);
+    }
+    #endregion
+
     private void SetValuesFromModel() {
         mouseSensitivitySlider.value = gameOptionModel.GetMouseSensitivity();
         controllerSensitivitySlider.value = gameOptionModel.GetControllerSensitivity();

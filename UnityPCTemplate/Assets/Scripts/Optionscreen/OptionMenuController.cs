@@ -8,6 +8,7 @@
 /// Controls the switching of panels within the option menu.
 /// </summary>
 public class OptionMenuController : MonoBehaviour {
+    //All the options panels availible
     public enum OptionPanels {
         GAME_OPTIONS = 0,
         CONTROL_OPTIONS = 1,
@@ -17,20 +18,20 @@ public class OptionMenuController : MonoBehaviour {
 
     #region Publics
     [Header("Panel To Open First")]
-    public OptionPanels firstPanel;
+    public OptionPanels firstPanel; //What panel should be opened first?
 
     [Space(10)]
 
     [Header("Option Menu Panels")]
-    public GameObject gameOptions;
-    public GameObject controlOptions;
-    public GameObject audioOptions;
-    public GameObject graphicsOptions;
+    public GameObject gameOptions;      //Game Options Panel
+    public GameObject controlOptions;   //Control Options Panel
+    public GameObject audioOptions;     //Audio Options Panel
+    public GameObject graphicsOptions;  //Graphics Options Panel
     #endregion
 
     #region Privates
-    private GameObject[] optionPanels;
-    private SaveGameManager saveGameManager;
+    private GameObject[] optionPanels;          //Option Panels as GameObjects -> Use same order as OptionPanels Enum
+    private SaveGameManager saveGameManager;    //SaveGame Manager
     #endregion
 
     private void Start() {
@@ -39,6 +40,7 @@ public class OptionMenuController : MonoBehaviour {
         SetActivePanel(firstPanel);
     }
 
+    //Saves the model and sets the new panel active
     private void SetActivePanel(OptionPanels panel) {
         saveGameManager.SaveData();
 
@@ -67,6 +69,7 @@ public class OptionMenuController : MonoBehaviour {
     }
 
     public void BackToMainMenu() {
+        saveGameManager.SaveData();
         LoadingscreenController.LoadScene(LoadingscreenController.Scenes.MAIN_MENU);
     }
     #endregion

@@ -35,6 +35,7 @@ public class SaveGameManager : MonoBehaviour {
 
         // Add models below to the dictionary to save / load them
         dic.Add(GameOptionModel.ID, new GameOptionModel());
+        dic.Add(AudioOptionModel.ID, new AudioOptionModel());
 
         return dic;
     }

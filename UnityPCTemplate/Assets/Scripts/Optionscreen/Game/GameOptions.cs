@@ -4,15 +4,15 @@ using UnityEngine.UI;
 public class GameOptions : MonoBehaviour {
     #region Publics
     [Header("Sliders & Toggles")]
-    public Slider mouseSensitivitySlider;
-    public Slider controllerSensitivitySlider;
-    public Toggle mouseYInverted;
-    public Toggle controllerYInverted;
-    public Toggle toggleCrouch;
+    public Slider mouseSensitivitySlider;       //Mouse Sensitivity Slider
+    public Slider controllerSensitivitySlider;  //Controller Sensitivity Slider
+    public Toggle mouseYInvertedToggle;         //Mouse Y Inverted Toggle
+    public Toggle controllerYInvertedToggle;    //Controller Y Inverted Toggle
+    public Toggle toggleCrouchToggle;           //Toggle Crouch Toggle
     #endregion
 
     #region Privates
-    private GameOptionModel gameOptionModel;
+    private GameOptionModel gameOptionModel;    //Game Option Model
     #endregion
 
     private void OnEnable() {
@@ -30,24 +30,24 @@ public class GameOptions : MonoBehaviour {
     }
 
     public void OnMouseYInvertedValueChanged() {
-        gameOptionModel.SetMouseYInverted(mouseYInverted.isOn);
+        gameOptionModel.SetMouseYInverted(mouseYInvertedToggle.isOn);
     }
 
     public void OnControllerYInvertedValueChanged() {
-        gameOptionModel.SetControllerYInverted(controllerYInverted.isOn);
+        gameOptionModel.SetControllerYInverted(controllerYInvertedToggle.isOn);
     }
 
     public void OnToggleCrouchValueChanged() {
-        gameOptionModel.SetHoldToCrouch(toggleCrouch.isOn);
+        gameOptionModel.SetHoldToCrouch(toggleCrouchToggle.isOn);
     }
     #endregion
 
     private void SetValuesFromModel() {
         mouseSensitivitySlider.value = gameOptionModel.GetMouseSensitivity();
         controllerSensitivitySlider.value = gameOptionModel.GetControllerSensitivity();
-        mouseYInverted.isOn = gameOptionModel.GetMouseYInverted();
-        controllerYInverted.isOn = gameOptionModel.GetControllerYInverted();
-        toggleCrouch.isOn = gameOptionModel.GetHoldToCrouch();
+        mouseYInvertedToggle.isOn = gameOptionModel.GetMouseYInverted();
+        controllerYInvertedToggle.isOn = gameOptionModel.GetControllerYInverted();
+        toggleCrouchToggle.isOn = gameOptionModel.GetHoldToCrouch();
     }
 
     #region Button Listeners

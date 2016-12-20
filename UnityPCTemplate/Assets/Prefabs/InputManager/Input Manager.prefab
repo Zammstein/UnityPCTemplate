@@ -180,7 +180,35 @@ MonoBehaviour:
       type: 0
       axis: 0
       joystick: 0
-    isExpanded: 0
+    - name: Interact
+      description: 
+      positive: 101
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 1
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Crouch
+      description: 
+      positive: 99
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 1
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    isExpanded: 1
   - name: XBox_360_Windows
     axes:
     - name: Button A
@@ -435,10 +463,52 @@ MonoBehaviour:
       type: 3
       axis: 5
       joystick: 0
-    isExpanded: 0
+    - name: Interact
+      description: 
+      positive: 350
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 1
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Crouch
+      description: 
+      positive: 351
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 1
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    - name: Jump
+      description: 
+      positive: 353
+      negative: 0
+      altPositive: 0
+      altNegative: 0
+      deadZone: 0
+      gravity: 1
+      sensitivity: 1
+      snap: 0
+      invert: 0
+      type: 0
+      axis: 0
+      joystick: 0
+    isExpanded: 1
   playerOneDefault: KeyboardAndMouse
   playerTwoDefault: 
   playerThreeDefault: 
   playerFourDefault: 
-  dontDestroyOnLoad: 0
+  dontDestroyOnLoad: 1
   ignoreTimescale: 0

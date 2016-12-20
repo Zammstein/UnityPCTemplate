@@ -91,25 +91,12 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &69724668
+--- !u!114 &69724668 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 114654486871825064, guid: 90c5a50f2c9644d4aad059c75d5edfd4,
     type: 2}
   m_PrefabInternal: {fileID: 86868042}
-  m_GameObject: {fileID: 912853280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f3e798a5e203ca4a99d891c03c70274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disableOnClick: 1
-  mainMenuButtons:
-  - {fileID: 1115634665}
-  - {fileID: 1729305355}
-  - {fileID: 1365851228}
-  gameScene: 4
-  optionScene: 3
 --- !u!1001 &86868042
 Prefab:
   m_ObjectHideFlags: 0
@@ -166,7 +153,6 @@ Prefab:
       objectReference: {fileID: 1365851228}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90c5a50f2c9644d4aad059c75d5edfd4, type: 2}
-  m_RootGameObject: {fileID: 912853280}
   m_IsPrefabParent: 0
 --- !u!1 &89335835
 GameObject:
@@ -451,11 +437,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 443159974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: cb136099cc3379144a392d48c3cce324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: MenuHorizontal
+  m_VerticalAxis: MenuVertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -562,37 +548,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 569226166}
---- !u!1 &912853280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1656763959255028, guid: 90c5a50f2c9644d4aad059c75d5edfd4,
-    type: 2}
-  m_PrefabInternal: {fileID: 86868042}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 912853281}
-  - component: {fileID: 69724668}
-  m_Layer: 0
-  m_Name: MainMenuSystems
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &912853281
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4129308561639672, guid: 90c5a50f2c9644d4aad059c75d5edfd4,
-    type: 2}
-  m_PrefabInternal: {fileID: 86868042}
-  m_GameObject: {fileID: 912853280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115634663
 GameObject:
   m_ObjectHideFlags: 0

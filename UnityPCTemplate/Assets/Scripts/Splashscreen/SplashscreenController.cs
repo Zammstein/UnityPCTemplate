@@ -11,10 +11,14 @@ using System.Collections;
 public class SplashscreenController : MonoBehaviour {
     #region Publics
     [Header("Splashscreen Controller")]
+
     [Space(10)]
+
     [Header("Timing for the Splashscreen")]
     public float timeScreenIsActive; //!< Time the splashscreen waits will it loads the next scene
+
     [Space(5)]
+
     [Header("Scene to load")]
     public LoadingscreenController.Scenes scenes;
     #endregion

@@ -40,6 +40,7 @@ public class GraphicsOptions : MonoBehaviour {
         SetTextureQualityDropdown();
         SetShadowDropdown();
         SetAntiAliasingDropdown();
+        SetAnisotropicToggle();
         SetReduceInputLagToggle();
     }
 

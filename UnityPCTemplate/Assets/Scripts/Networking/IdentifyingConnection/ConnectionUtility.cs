@@ -75,8 +75,11 @@ namespace Networking.IdentifyingConnection {
             } else {
                 // dont even start testen connection
                 connectionStatus = NetworkStatusModel.Status.NO_CONNECTION;
+                connectionTestResult = ConnectionTesterStatus.Error;
                 testMessage = noConnection;
-                EventManager.TriggerEvent(NetworkConnectionEventTypes.CONNECTION_STATUS_UPDATE, connectionStatus);
+
+                NetworkStatusModel model = new NetworkStatusModel(connectionStatus, connectionTestResult, testMessage, externalip, useNat);
+                EventManager.TriggerEvent(NetworkConnectionEventTypes.CONNECTION_STATUS_UPDATE, model);
             }
         }
 

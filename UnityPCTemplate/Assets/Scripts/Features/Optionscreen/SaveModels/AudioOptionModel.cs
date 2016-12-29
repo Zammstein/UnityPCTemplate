@@ -3,6 +3,13 @@ using System;
 
 namespace Features.Optionscreen.SaveModels {
 
+    /// <summary>
+    /// AudioOptionModel
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the data to be saved/loaded in the Audio Options
+    /// </summary>
     [Serializable]
     public class AudioOptionModel : SaveModel {
         public const string ID = "AudioOptionModel";

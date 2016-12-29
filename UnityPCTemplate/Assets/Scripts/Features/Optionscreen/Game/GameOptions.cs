@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 namespace Features.Optionscreen.Game {
 
+    /// <summary>
+    /// GameOptions
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the logic to update the game model, this will allow the user to change several game options.
+    /// </summary>
     public class GameOptions : MonoBehaviour {
         #region Publics
         [Header("Sliders & Toggles")]

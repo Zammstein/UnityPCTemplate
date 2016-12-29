@@ -6,6 +6,13 @@ using Features.SaveLoad;
 
 namespace Features.Optionscreen.SaveModels {
 
+    /// <summary>
+    /// ControlOptionModel
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the data to be saved/loaded in the Control Options
+    /// </summary>
     [Serializable]
     public class ControlOptionModel : SaveModel {
         public const string ID = "ControlOptionModel";

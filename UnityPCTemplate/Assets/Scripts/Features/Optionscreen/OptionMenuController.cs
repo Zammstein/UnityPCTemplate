@@ -12,7 +12,9 @@ namespace Features.Optionscreen {
     /// Controls the switching of panels within the option menu.
     /// </summary>
     public class OptionMenuController : MonoBehaviour {
-        //All the options panels availible
+        /// <summary>
+        /// All panels that are in the options menu, just add another one if needed.
+        /// </summary>
         public enum OptionPanels {
             GAME_OPTIONS = 0,
             CONTROL_OPTIONS = 1,
@@ -44,7 +46,10 @@ namespace Features.Optionscreen {
             SetActivePanel(firstPanel);
         }
 
-        //Saves the model and sets the new panel active
+        /// <summary>
+        /// Saves the model and sets the new panel active
+        /// </summary>
+        /// <param name="panel">The next panel to enable</param>
         private void SetActivePanel(OptionPanels panel) {
             saveGameManager.SaveData();
 

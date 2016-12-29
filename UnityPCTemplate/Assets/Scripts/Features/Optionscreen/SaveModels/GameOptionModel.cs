@@ -3,6 +3,13 @@ using System;
 
 namespace Features.Optionscreen.SaveModels {
 
+    /// <summary>
+    /// GameOptionModel
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the data to be saved/loaded in the Game Options
+    /// </summary>
     [Serializable]
     public class GameOptionModel : SaveModel {
         public const string ID = "GameOptionModel";

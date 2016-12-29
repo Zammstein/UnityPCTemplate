@@ -3,6 +3,13 @@ using System;
 
 namespace Features.Optionscreen.SaveModels {
 
+    /// <summary>
+    /// GraphicsOptionModel
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the data to be saved/loaded in the Graphics Options
+    /// </summary>
     [Serializable]
     public class GraphicsOptionModel : SaveModel {
         public const string ID = "GraphicsOptionModel";

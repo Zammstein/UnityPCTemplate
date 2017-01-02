@@ -1,4 +1,5 @@
-﻿using Core.Loadingscreen;
+﻿using Core.EventSystem;
+using Core.SceneLoading;
 using Features.SaveLoad;
 using UnityEngine;
 
@@ -79,7 +80,7 @@ namespace Features.Optionscreen {
 
         public void BackToMainMenu() {
             saveGameManager.SaveData();
-            LoadingscreenController.LoadScene(LoadingscreenController.Scenes.MAIN_MENU);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, SceneLoadingController.Scenes.MAIN_MENU);
         }
         #endregion
     }

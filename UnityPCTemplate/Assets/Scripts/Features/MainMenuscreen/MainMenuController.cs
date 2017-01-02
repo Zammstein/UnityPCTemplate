@@ -1,4 +1,5 @@
-﻿using Core.Loadingscreen;
+﻿using Core.EventSystem;
+using Core.SceneLoading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,8 +25,8 @@ namespace Features.MainMenuScreen {
         [Space(10)]
 
         [Header("Scenes to Load")]
-        public LoadingscreenController.Scenes gameScene;
-        public LoadingscreenController.Scenes optionScene;
+        public SceneLoadingController.Scenes gameScene;
+        public SceneLoadingController.Scenes optionScene;
         #endregion
 
         private void Start() {
@@ -45,12 +46,12 @@ namespace Features.MainMenuScreen {
         #region Button Listeners
         public void StartGame() {
             SetButtonState(disableOnClick);
-            LoadingscreenController.LoadScene(gameScene);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, gameScene);
         }
 
         public void Options() {
             SetButtonState(disableOnClick);
-            LoadingscreenController.LoadScene(optionScene);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, optionScene);
         }
 
         public void ExitGame() {

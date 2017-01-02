@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Core.Loadingscreen;
+using Core.SceneLoading;
+using Core.EventSystem;
 
 namespace Features.Splashscreen {
 
@@ -23,7 +24,7 @@ namespace Features.Splashscreen {
         [Space(5)]
 
         [Header("Scene to load")]
-        public LoadingscreenController.Scenes scenes;
+        public SceneLoadingController.Scenes scenes;
         #endregion
 
         private void Start() {
@@ -32,7 +33,7 @@ namespace Features.Splashscreen {
 
         private IEnumerator GoToNextScene(float time) {
             yield return new WaitForSeconds(time);
-            LoadingscreenController.LoadScene(scenes);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, scenes);
         }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using System.Collections.Generic;
 
-namespace Core.EventManager {
+namespace Core.EventSystem {
 
     /// <summary>
     /// EventManager
@@ -14,7 +14,6 @@ namespace Core.EventManager {
     /// 'DontDestroyOnLoad'. Place it in the first scene of the application to make sure every script in 
     /// every scene can use events to communicate.
     /// </summary>
-
     public class EventManager : MonoBehaviour {
 
         #region Initialization

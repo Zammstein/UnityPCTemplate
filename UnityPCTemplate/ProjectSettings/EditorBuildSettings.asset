@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Splashscreen.unity
+    path: Assets/Scenes/Features/Splashscreen.unity
   - enabled: 1
-    path: Assets/Scenes/LoadingScreen.unity
+    path: Assets/Scenes/Core/LoadingScreen.unity
   - enabled: 1
-    path: Assets/Scenes/MainMenuScreen.unity
+    path: Assets/Scenes/Features/MainMenuScreen.unity
   - enabled: 1
-    path: Assets/Scenes/Optionscreen.unity
+    path: Assets/Scenes/Features/Optionscreen.unity

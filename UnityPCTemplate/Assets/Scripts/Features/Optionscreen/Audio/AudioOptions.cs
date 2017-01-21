@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 namespace Features.Optionscreen.Audio {
 
+    /// <summary>
+    /// AudioOptions
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the logic to update the audio model, this will allow the user to increase/decrease volume of game elements.
+    /// </summary>
     public class AudioOptions : MonoBehaviour {
         #region Publics
         [Header("Sliders & Toggles")]

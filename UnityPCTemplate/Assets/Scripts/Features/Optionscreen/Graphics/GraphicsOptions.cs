@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 namespace Features.Optionscreen.Graphics {
 
+    /// <summary>
+    /// GraphicsOptions
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the logic to update the graphics model, this will allow the user to increase/decrease graphics settings.
+    /// </summary>
     public class GraphicsOptions : MonoBehaviour {
         #region Publics
         [Header("Dropdowns & Toggles")]

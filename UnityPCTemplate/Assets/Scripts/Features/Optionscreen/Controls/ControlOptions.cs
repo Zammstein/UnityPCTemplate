@@ -8,6 +8,13 @@ using Features.SaveLoad;
 
 namespace Features.Optionscreen.Controls {
 
+    /// <summary>
+    /// ControlOptions
+    /// <summary>
+    /// Author: Thomas van Opstal
+    /// <summary>
+    /// Contains the logic to update the control model, this will allow the user to change his keybindings.
+    /// </summary>
     public class ControlOptions : MonoBehaviour {
         #region Publics
         public Text jumpController;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Events;
 
-namespace Core.EventManager {
+namespace Core.EventSystem {
 
     /// <summary>
     /// GameEvent
@@ -9,7 +9,6 @@ namespace Core.EventManager {
     /// <summary>
     /// Simple class to represent arguments passed with commands.
     /// </summary>
-
     public class GameEvent : UnityEvent<object[]> {
     }
 }

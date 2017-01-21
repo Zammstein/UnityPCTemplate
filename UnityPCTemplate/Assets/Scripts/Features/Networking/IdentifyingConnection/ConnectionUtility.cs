@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Net;
-using Core.EventManager;
+using Core.EventSystem;
 
 namespace Features.Networking.IdentifyingConnection {
 

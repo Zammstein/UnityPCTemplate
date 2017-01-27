@@ -4,6 +4,7 @@ using Steamworks;
 
 namespace Features.Steam
 {
+    [DisallowMultipleComponent]
     [RequireComponent (typeof (SteamManager))] //Make sure the SteamManager is always active aswell.
     public class SteamInviteManager : MonoBehaviour
     {

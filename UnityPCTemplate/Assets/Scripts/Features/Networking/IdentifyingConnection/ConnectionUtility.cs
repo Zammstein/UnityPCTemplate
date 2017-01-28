@@ -35,11 +35,11 @@ namespace Features.Networking.IdentifyingConnection {
         #endregion
 
         void Start() {
-            EventManager.StartListening(NetworkConnectionEventTypes.TEST_CONNECTION_STATUS, OnConnectionStatusRequest);
+            EventManager.StartListening(NetworkConnectionEventTypes.GLOBAL_TEST_CONNECTION_STATUS, OnConnectionStatusRequest);
         }
 
         void OnDestroy() {
-            EventManager.StopListening(NetworkConnectionEventTypes.TEST_CONNECTION_STATUS, OnConnectionStatusRequest);
+            EventManager.StopListening(NetworkConnectionEventTypes.GLOBAL_TEST_CONNECTION_STATUS, OnConnectionStatusRequest);
         }
 
         void Awake() {
@@ -78,7 +78,7 @@ namespace Features.Networking.IdentifyingConnection {
                 testMessage = noConnection;
 
                 NetworkStatusModel model = new NetworkStatusModel(connectionStatus, connectionTestResult, testMessage, externalip, useNat);
-                EventManager.TriggerEvent(NetworkConnectionEventTypes.CONNECTION_STATUS_UPDATE, model);
+                EventManager.TriggerEvent(NetworkConnectionEventTypes.GLOBAL_CONNECTION_STATUS_UPDATE, model);
             }
         }
 
@@ -169,7 +169,7 @@ namespace Features.Networking.IdentifyingConnection {
             // If done testing, dispatch an update with a NetworkStatusModel containing all information necessary.
             if (doneTesting) {
                 NetworkStatusModel model = new NetworkStatusModel(connectionStatus, connectionTestResult, testMessage, externalip, useNat);
-                EventManager.TriggerEvent(NetworkConnectionEventTypes.CONNECTION_STATUS_UPDATE, model);
+                EventManager.TriggerEvent(NetworkConnectionEventTypes.GLOBAL_CONNECTION_STATUS_UPDATE, model);
             }
         }
     }

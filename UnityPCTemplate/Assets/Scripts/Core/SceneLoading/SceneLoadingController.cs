@@ -68,13 +68,13 @@ namespace Core.SceneLoading {
         }
 
         void Start() {
-            EventManager.StartListening(SceneLoadingEventTypes.LOAD_SCENE, LoadScene);
+            EventManager.StartListening(SceneLoadingEventTypes.GLOBAL_LOAD_SCENE, LoadScene);
             EventManager.StartListening(SceneLoadingEventTypes.FADE_OUT_COMPLETE, SceneReadyForSwitch);
             EventManager.StartListening(SceneLoadingEventTypes.FADE_OUT_LOADING_SCREEN_COMPLETE, SwitchAfterFadeOut);
         }
 
         void OnDestroy() {
-            EventManager.StopListening(SceneLoadingEventTypes.LOAD_SCENE, LoadScene);
+            EventManager.StopListening(SceneLoadingEventTypes.GLOBAL_LOAD_SCENE, LoadScene);
             EventManager.StopListening(SceneLoadingEventTypes.FADE_OUT_COMPLETE, SceneReadyForSwitch);
             EventManager.StopListening(SceneLoadingEventTypes.FADE_OUT_LOADING_SCREEN_COMPLETE, SwitchAfterFadeOut);
         }

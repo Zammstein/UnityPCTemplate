@@ -17,7 +17,7 @@
         /// Argument(s) required:
         /// 1. bool: Should NAT punchthrough be taken in consideration
         /// </summary>
-        public const string TEST_CONNECTION_STATUS = "TEST_CONNECTION_STATUS";
+        public const string GLOBAL_TEST_CONNECTION_STATUS = "GLOBAL_TEST_CONNECTION_STATUS";
 
         /// <summary>
         /// Listen to this event to get information about the current internet connection
@@ -26,7 +26,7 @@
         /// Argument(s) returned:
         /// 1. NetworkStatusModel: The model containing the connection info.
         /// </summary>
-        public const string CONNECTION_STATUS_UPDATE = "CONNECTION_STATUS_UPDATE";
+        public const string GLOBAL_CONNECTION_STATUS_UPDATE = "GLOBAL_CONNECTION_STATUS_UPDATE";
     }
 }
 

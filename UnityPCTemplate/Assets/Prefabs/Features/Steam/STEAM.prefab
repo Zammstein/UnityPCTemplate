@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114946405347012140}
   - component: {fileID: 114396785210390658}
   - component: {fileID: 114329792217535440}
+  - component: {fileID: 114728680171559776}
   m_Layer: 0
   m_Name: STEAM
   m_TagString: Untagged
@@ -62,6 +63,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 565a4eda148aa414eb0681eee2d97921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114728680171559776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378820632508768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee692f1c5ba131478924d53cf1f458f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114946405347012140

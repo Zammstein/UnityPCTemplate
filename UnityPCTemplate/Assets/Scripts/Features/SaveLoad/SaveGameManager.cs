@@ -24,7 +24,7 @@ namespace Features.SaveLoad {
                     manager = FindObjectOfType(typeof(SaveGameManager)) as SaveGameManager;
 
                     if (!manager)
-                        Debug.LogError("There needs to be one active ModelManager script on a GameObject in your scene.");
+                        Debug.LogError("There needs to be one active SaveGameManager script on a GameObject in your scene.");
                     else
                         manager.Init();
                 }

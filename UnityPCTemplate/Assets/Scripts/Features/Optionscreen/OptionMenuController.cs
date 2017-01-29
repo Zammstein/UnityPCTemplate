@@ -80,7 +80,7 @@ namespace Features.Optionscreen {
 
         public void BackToMainMenu() {
             saveGameManager.SaveData();
-            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, SceneLoadingController.Scenes.MAIN_MENU);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.GLOBAL_LOAD_SCENE, SceneLoadingController.Scenes.MAIN_MENU);
         }
         #endregion
     }

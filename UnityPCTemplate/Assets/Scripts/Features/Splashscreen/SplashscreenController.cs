@@ -33,7 +33,7 @@ namespace Features.Splashscreen {
 
         private IEnumerator GoToNextScene(float time) {
             yield return new WaitForSeconds(time);
-            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, scenes);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.GLOBAL_LOAD_SCENE, scenes);
         }
     }
 }

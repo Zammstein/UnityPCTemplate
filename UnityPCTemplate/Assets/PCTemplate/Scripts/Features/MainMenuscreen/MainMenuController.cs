@@ -48,12 +48,12 @@ namespace Features.MainMenuScreen {
         #region Button Listeners
         public void StartGame() {
             SetButtonState(disableOnClick);
-            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, gameScene);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.GLOBAL_LOAD_SCENE, gameScene);
         }
 
         public void Options() {
             SetButtonState(disableOnClick);
-            EventManager.TriggerEvent(SceneLoadingEventTypes.LOAD_SCENE, optionScene);
+            EventManager.TriggerEvent(SceneLoadingEventTypes.GLOBAL_LOAD_SCENE, optionScene);
         }
 
         public void ExitGame() {

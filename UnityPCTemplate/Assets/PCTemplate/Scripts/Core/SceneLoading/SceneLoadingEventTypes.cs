@@ -15,7 +15,7 @@
         /// Argument(s) required:
         /// 1. SceneLoadingController.Scenes: The scene that the SceneLoadingController will load and move to.
         /// </summary>
-        public const string LOAD_SCENE = "SCENE_LOADING_EVENTS_LOAD_SCENE";
+        public const string GLOBAL_LOAD_SCENE = "SCENE_LOADING_EVENTS_GLOBAL_LOAD_SCENE";
 
         /// <summary>
         /// The following commands are used when the scene fading feature is enabled in a scene.

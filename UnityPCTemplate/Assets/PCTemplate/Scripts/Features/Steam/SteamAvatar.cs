@@ -19,20 +19,25 @@ namespace Features.Steam {
         }
         #endregion
 
-        #region Public
-        public static SteamAvatar instance = null;
-        #endregion
+        #region Initialization
+        private static SteamAvatar steamAvatar;
 
-        private void OnAwake() {
-            #region Make sure only one instance exists
-            if (instance == null)
-                instance = this;
-            else if (instance != this)
-                Destroy(gameObject);
+        public static SteamAvatar instance {
+            get {
+                if (!steamAvatar) {
+                    steamAvatar = FindObjectOfType(typeof(SteamAvatar)) as SteamAvatar;
 
-            DontDestroyOnLoad(gameObject);
-            #endregion
+                    if (!steamAvatar)
+                        Debug.LogError("There needs to be one active SteamAvatar script on a GameObject in your scene.");
+                }
+                return steamAvatar;
+            }
         }
+
+        void Awake() {
+            DontDestroyOnLoad(gameObject);
+        }
+        #endregion
 
         #region Get Avatar
         /// <summary>
@@ -78,11 +83,11 @@ namespace Features.Steam {
 
                     return avatarTexture;
                 } else {
-                    Debug.Log("[SteamAvatar]: " + "Failed to get Image");
+                    Debug.LogError("[SteamAvatar]: " + "Failed to get Image");
                     return new Texture2D(0, 0);
                 }
             } else {
-                Debug.Log("[SteamAvatar]: " + "SteamManager not Initialized");
+                Debug.LogError("[SteamAvatar]: " + "SteamManager not Initialized");
                 return new Texture2D(0, 0);
             }
         }

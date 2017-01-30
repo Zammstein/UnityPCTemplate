@@ -35,10 +35,6 @@ namespace Core.EventSystem {
             }
         }
 
-        void Start() {
-            EventManager callInit = instance;
-        }
-
         void Awake() {
             DontDestroyOnLoad(gameObject);
         }

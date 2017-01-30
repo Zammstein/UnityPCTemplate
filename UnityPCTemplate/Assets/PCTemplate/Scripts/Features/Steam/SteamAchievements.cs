@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using Steamworks;
+using Core.EventSystem;
+using System;
 /// <summary>
 /// SteamAchievements.cs
 /// <summary>
@@ -26,17 +28,26 @@ namespace Features.Steam {
             #endregion
         }
 
-        ///<summary
-        /// First it checks if the achievement is already unlocked by the user, if it has not been unlocked it will be set to unlocked and the unlock will be saved 
+        private void Start() {
+            EventManager.StartListening(SteamEventTypes.GLOBAL_STEAM_UNLOCK_ACHIEVEMENT, OnAchievementUnlocked);
+        }
+
+        private void OnDestroy() {
+            EventManager.StopListening(SteamEventTypes.GLOBAL_STEAM_UNLOCK_ACHIEVEMENT, OnAchievementUnlocked);
+        }
+
+        ///<summary>
+        /// First it checks if the achievement is already unlocked by the user, if it has not been unlocked it will be set to unlocked and the unlock will be saved (unlock)
         ///</summary>
-        public static void UnlockAchievement(string AchievementName) {
+        private void OnAchievementUnlocked(object[] arg0) {
+            string achievementName = (string)arg0[0];
             if (SteamManager.Initialized) {
                 bool AchievementUnlocked;
-                SteamUserStats.GetAchievement(AchievementName, out AchievementUnlocked); //Get current unlock state of the achievement
+                SteamUserStats.GetAchievement(achievementName, out AchievementUnlocked); //Get current unlock state of the achievement
 
                 if (!AchievementUnlocked) {
-                    SteamUserStats.SetAchievement(AchievementName); //Set the achievement to unlocked
-                    Debug.Log("[SteamAchievements]: " + "Achievement: " + AchievementName + " unlocked!");
+                    SteamUserStats.SetAchievement(achievementName); //Set the achievement to unlocked
+                    Debug.Log("[SteamAchievements]: " + "Achievement: " + achievementName + " unlocked!");
                     SteamUserStats.StoreStats(); //Store the stats (unlocked achievement) - this also triggers the Achievement Popup
                 }
             }

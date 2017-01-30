@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TeamUtility.IO;
 
 namespace Features.ControllerSupport
 {
@@ -37,7 +38,7 @@ namespace Features.ControllerSupport
             //Get the first EventSystem on startup
             currentEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
-            if (currentEventSystem != null)
+            if (currentEventSystem != null && isControllerActive())
                 currentEventSystem.SetSelectedGameObject(GetFirstButtonInScene());
         }
 
@@ -49,7 +50,7 @@ namespace Features.ControllerSupport
             //Get the new EventSystem in the newly loaded Scene
             currentEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
-            if (currentEventSystem != null)
+            if (currentEventSystem != null && isControllerActive())
                 currentEventSystem.SetSelectedGameObject(GetFirstButtonInScene());
         }
 
@@ -64,6 +65,14 @@ namespace Features.ControllerSupport
                 return firstButtonInScene.gameObject;
             else
                 return null;
+        }
+
+        private bool isControllerActive() {
+            if (InputManager.GetInputConfiguration(PlayerID.One).name != "KeyboardAndMouse") {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

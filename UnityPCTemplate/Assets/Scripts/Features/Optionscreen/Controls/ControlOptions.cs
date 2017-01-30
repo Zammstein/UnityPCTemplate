@@ -74,19 +74,19 @@ namespace Features.Optionscreen.Controls {
         #endregion
 
         private void SetKeybindingValues() {
-            controlOptionModel.SetJumpKey("XBox_360_Windows", InputManager.GetAxisConfiguration("XBox_360_Windows", "Jump").positive.ToString());
+            controlOptionModel.SetJumpKey("Windows_Gamepad", InputManager.GetAxisConfiguration("Windows_Gamepad", "Jump").positive.ToString());
             controlOptionModel.SetJumpKey("KeyboardAndMouse", InputManager.GetAxisConfiguration("KeyboardAndMouse", "Jump").positive.ToString());
-            jumpController.text = InputManager.GetAxisConfiguration("XBox_360_Windows", "Jump").positive.ToString();
+            jumpController.text = InputManager.GetAxisConfiguration("Windows_Gamepad", "Jump").positive.ToString();
             jumpKeyboard.text = InputManager.GetAxisConfiguration("KeyboardAndMouse", "Jump").positive.ToString();
 
-            controlOptionModel.SetInteractKey("XBox_360_Windows", InputManager.GetAxisConfiguration("XBox_360_Windows", "Interact").positive.ToString());
+            controlOptionModel.SetInteractKey("Windows_Gamepad", InputManager.GetAxisConfiguration("Windows_Gamepad", "Interact").positive.ToString());
             controlOptionModel.SetInteractKey("KeyboardAndMouse", InputManager.GetAxisConfiguration("KeyboardAndMouse", "Interact").positive.ToString());
-            interactController.text = InputManager.GetAxisConfiguration("XBox_360_Windows", "Interact").positive.ToString();
+            interactController.text = InputManager.GetAxisConfiguration("Windows_Gamepad", "Interact").positive.ToString();
             interactKeyboard.text = InputManager.GetAxisConfiguration("KeyboardAndMouse", "Interact").positive.ToString();
 
-            controlOptionModel.SetCrouchKey("XBox_360_Windows", InputManager.GetAxisConfiguration("XBox_360_Windows", "Crouch").positive.ToString());
+            controlOptionModel.SetCrouchKey("Windows_Gamepad", InputManager.GetAxisConfiguration("Windows_Gamepad", "Crouch").positive.ToString());
             controlOptionModel.SetCrouchKey("KeyboardAndMouse", InputManager.GetAxisConfiguration("KeyboardAndMouse", "Crouch").positive.ToString());
-            crouchController.text = InputManager.GetAxisConfiguration("XBox_360_Windows", "Crouch").positive.ToString();
+            crouchController.text = InputManager.GetAxisConfiguration("Windows_Gamepad", "Crouch").positive.ToString();
             crouchKeyboard.text = InputManager.GetAxisConfiguration("KeyboardAndMouse", "Crouch").positive.ToString();
         }
 

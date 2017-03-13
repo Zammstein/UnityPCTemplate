@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/PCTemplate/Scenes/Features/MainMenuScreen.unity
   - enabled: 1
     path: Assets/PCTemplate/Scenes/Features/Optionscreen.unity
+  - enabled: 1
+    path: Assets/SMP/Scenes/GameScene.unity

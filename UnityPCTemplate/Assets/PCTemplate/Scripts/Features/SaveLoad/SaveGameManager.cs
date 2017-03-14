@@ -39,7 +39,6 @@ namespace Features.SaveLoad {
             dic.Add(GameOptionModel.ID, new GameOptionModel());
             dic.Add(AudioOptionModel.ID, new AudioOptionModel());
             dic.Add(GraphicsOptionModel.ID, new GraphicsOptionModel());
-            dic.Add(ControlOptionModel.ID, new ControlOptionModel());
 
             return dic;
         }

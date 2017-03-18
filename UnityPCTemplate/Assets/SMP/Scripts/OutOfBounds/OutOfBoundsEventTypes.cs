@@ -1,5 +1,6 @@
 ﻿namespace SMP.OutOfBounds {
     public class OutOfBoundsEventTypes {
-        public const string GLOBAL_SET_OUT_OF_BOUNDS_EFFECT = "OUT_OF_BOUNDS_GLOBAL_SET_OUT_OF_BOUNDS_EFFECT";
+        public const string INTERNAL_PLAYER_ENTERED = "OUT_OF_BOUNDS_INTERNAL_PLAYER_ENTERED";
+        public const string INTERNAL_PLAYER_EXIT = "OUT_OF_BOUNDS_INTERNAL_PLAYER_EXIT";
     }
 }

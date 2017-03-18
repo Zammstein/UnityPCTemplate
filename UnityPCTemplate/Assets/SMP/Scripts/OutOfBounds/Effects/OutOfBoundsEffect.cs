@@ -8,16 +8,10 @@ namespace SMP.OutOfBounds {
             CAMERA_BLUR
         }
 
-        public EFFECT_TYPE effectType;
-        
-        private bool effectActive;
+        protected EFFECT_TYPE effectType;
 
-        public bool EffectIsActive() {
-            return effectActive;
-        }
-
-        public void SetEffectActive(bool isActive) {
-            effectActive = isActive;
+        public EFFECT_TYPE GetEffectType() {
+            return effectType;
         }
 
         public abstract void EndEffect();

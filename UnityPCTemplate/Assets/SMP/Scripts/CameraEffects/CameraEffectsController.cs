@@ -21,7 +21,7 @@ namespace SMP.CameraEffects {
 
         void OnDestroy() {
             EventManager.StopListening(CameraEffectsEventTypes.GLOBAL_TOGGLE_BLUR_EFFECT, OnBlurEffectToggled);
-            EventManager.StartListening(CameraEffectsEventTypes.GLOBAL_TOGGLE_TEXT_MESSAGE, OnTextMessageToggled);
+            EventManager.StopListening(CameraEffectsEventTypes.GLOBAL_TOGGLE_TEXT_MESSAGE, OnTextMessageToggled);
         }
 
         private void OnBlurEffectToggled(object[] arg0) {

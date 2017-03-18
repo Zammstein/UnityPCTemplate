@@ -1,6 +1,7 @@
 ﻿using Core.EventSystem;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
 namespace SMP.DynamicFOV {
 
@@ -16,7 +17,7 @@ namespace SMP.DynamicFOV {
         /// <summary>
         /// This value will be set on Start to overwrite the default values applied by the connected HMD.
         /// </summary>
-        [Range(1f, 179f)]
+        [Range(50f, 150f)]
         public float defaultFOV = 100f;
 
         /// <summary>
@@ -31,10 +32,16 @@ namespace SMP.DynamicFOV {
         public float transitionTime = 1f;
 
         public Slider fovSlider;
+        public LinearMapping sliderMapping;
 
         void Start() {
             cameraToAdjust.fieldOfView = defaultFOV;
             fovSlider.value = defaultFOV;
+            sliderMapping.value = (defaultFOV - fovSlider.minValue) / (fovSlider.maxValue - fovSlider.minValue);
+        }
+
+        void Update() {
+            fovSlider.value = ((fovSlider.maxValue - fovSlider.minValue) * sliderMapping.value) + fovSlider.minValue;
         }
 
         public void OnApplyFOV() {

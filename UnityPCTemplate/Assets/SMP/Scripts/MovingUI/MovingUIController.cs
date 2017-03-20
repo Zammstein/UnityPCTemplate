@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using SMP.Utility;
+using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR.InteractionSystem;
 
@@ -36,9 +37,9 @@ namespace SMP.MovingUI {
         }
 
         void Update() {
-            scaleSlider.value = ((scaleSlider.maxValue - scaleSlider.minValue) * scaleMapping.value) + scaleSlider.minValue;
-            distanceSlider.value = ((distanceSlider.maxValue - distanceSlider.minValue) * distanceMapping.value) + distanceSlider.minValue;
-            widthHeightSlider.value = ((widthHeightSlider.maxValue - widthHeightSlider.minValue) * widthHeightMapping.value) + widthHeightSlider.minValue;
+            scaleSlider.value = Meth.Normalize(scaleMapping.value, scaleSlider.maxValue, scaleSlider.minValue);
+            distanceSlider.value = Meth.Normalize(distanceMapping.value, distanceSlider.maxValue, distanceSlider.minValue);
+            widthHeightSlider.value = Meth.Normalize(widthHeightMapping.value, widthHeightSlider.maxValue, widthHeightSlider.minValue);
 
             rectTransform.localScale = new Vector3(scaleSlider.value, scaleSlider.value, rectTransform.localScale.z);
             rectTransform.position = new Vector3(rectTransform.position.x, rectTransform.position.y, distanceSlider.value);

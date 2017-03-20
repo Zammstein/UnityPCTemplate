@@ -1,4 +1,4 @@
-﻿using Core.EventSystem;
+﻿using SMP.Utility;
 using UnityEngine;
 using UnityEngine.UI;
 using Valve.VR.InteractionSystem;
@@ -21,9 +21,14 @@ namespace SMP.DynamicFOV {
         public float defaultFOV = 100f;
 
         /// <summary>
-        /// FOV values will be applied to this camera
+        /// FOV values will be applied to this camera when in vr
         /// </summary>
-        public Camera cameraToAdjust;
+        public Camera vrCamera;
+
+        /// <summary>
+        /// FOV values will be applied to this camera when not in vr
+        /// </summary>
+        public new Camera camera;
 
         /// <summary>
         /// Total time it takes to fade out, apply new FOV value and fade back in.
@@ -34,14 +39,17 @@ namespace SMP.DynamicFOV {
         public Slider fovSlider;
         public LinearMapping sliderMapping;
 
+        private Camera cameraToAdjust;
+
         void Start() {
+            cameraToAdjust = vrCamera.gameObject.activeInHierarchy ? vrCamera : camera;
             cameraToAdjust.fieldOfView = defaultFOV;
             fovSlider.value = defaultFOV;
             sliderMapping.value = (defaultFOV - fovSlider.minValue) / (fovSlider.maxValue - fovSlider.minValue);
         }
 
         void Update() {
-            fovSlider.value = ((fovSlider.maxValue - fovSlider.minValue) * sliderMapping.value) + fovSlider.minValue;
+            fovSlider.value = Meth.Normalize(sliderMapping.value, fovSlider.maxValue, fovSlider.minValue);
         }
 
         public void OnApplyFOV() {

@@ -15,12 +15,6 @@ namespace SMP.DynamicFOV {
     public class AdjustFOVController : MonoBehaviour {
 
         /// <summary>
-        /// This value will be set on Start to overwrite the default values applied by the connected HMD.
-        /// </summary>
-        [Range(50f, 150f)]
-        public float defaultFOV = 100f;
-
-        /// <summary>
         /// FOV values will be applied to this camera when in vr
         /// </summary>
         public Camera vrCamera;
@@ -38,18 +32,20 @@ namespace SMP.DynamicFOV {
 
         public Slider fovSlider;
         public LinearMapping sliderMapping;
+        public Text fovValueText;
+        public Vector2 fovBounds;
 
         private Camera cameraToAdjust;
 
         void Start() {
             cameraToAdjust = vrCamera.gameObject.activeInHierarchy ? vrCamera : camera;
-            cameraToAdjust.fieldOfView = defaultFOV;
-            fovSlider.value = defaultFOV;
-            sliderMapping.value = (defaultFOV - fovSlider.minValue) / (fovSlider.maxValue - fovSlider.minValue);
+            fovSlider.minValue = fovBounds.x;
+            fovSlider.maxValue = fovBounds.y;
         }
 
         void Update() {
             fovSlider.value = Meth.Normalize(sliderMapping.value, fovSlider.maxValue, fovSlider.minValue);
+            fovValueText.text = Mathf.Floor(fovSlider.value).ToString();
         }
 
         public void OnApplyFOV() {

@@ -24,6 +24,10 @@ namespace SMP.MovingUI {
         public LinearMapping distanceMapping;
         public LinearMapping widthHeightMapping;
 
+        public Text scaleValueText;
+        public Text distanceValueText;
+        public Text widthHeightValueText;
+
         void Start() {
             scaleSlider.minValue = scaleBounds.x;
             scaleSlider.maxValue = scaleBounds.y;
@@ -44,6 +48,10 @@ namespace SMP.MovingUI {
             rectTransform.localScale = new Vector3(scaleSlider.value, scaleSlider.value, rectTransform.localScale.z);
             rectTransform.position = new Vector3(rectTransform.position.x, rectTransform.position.y, distanceSlider.value);
             rectTransform.sizeDelta = new Vector2(widthHeightSlider.value, widthHeightSlider.value);
+
+            scaleValueText.text = scaleSlider.value.ToString();
+            distanceValueText.text = Mathf.Floor(distanceSlider.value).ToString();
+            widthHeightValueText.text = Mathf.Floor(widthHeightSlider.value).ToString();
         }
     }
 }

@@ -18,6 +18,7 @@ namespace SMP.DynamicFOV {
 
         public Slider brightnessSlider;
         public LinearMapping linearMapping;
+        public Text brightnessValueText;
 
         public Vector2 brightnessBounds;
 
@@ -29,6 +30,7 @@ namespace SMP.DynamicFOV {
         void Update() {
             brightnessSlider.value = Meth.Normalize(linearMapping.value, brightnessSlider.maxValue, brightnessSlider.minValue);
             flare.brightness = brightnessSlider.value;
+            brightnessValueText.text = Mathf.Floor(brightnessSlider.value).ToString();
         }
     }
 }

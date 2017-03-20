@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
 namespace SMP.MovingUI {
     
@@ -9,23 +10,39 @@ namespace SMP.MovingUI {
         /// The canvas on which the transform mutation will be performed;
         /// </summary>
         public RectTransform rectTransform;
+
         public Slider scaleSlider;
         public Slider distanceSlider;
         public Slider widthHeightSlider;
+
         public Vector2 scaleBounds;
         public Vector2 distanceBounds;
         public Vector2 widthHeightBounds;
 
-        public void OnScaleSliderValueChanged() {
-            rectTransform.localScale = new Vector3(scaleBounds.x * scaleSlider.value, scaleBounds.y * scaleSlider.value, rectTransform.localScale.z);
+        public LinearMapping scaleMapping;
+        public LinearMapping distanceMapping;
+        public LinearMapping widthHeightMapping;
+
+        void Start() {
+            scaleSlider.minValue = scaleBounds.x;
+            scaleSlider.maxValue = scaleBounds.y;
+
+            distanceSlider.minValue = distanceBounds.x;
+            distanceSlider.maxValue = distanceBounds.y;
+
+            widthHeightSlider.minValue = widthHeightBounds.x;
+            widthHeightSlider.maxValue = widthHeightBounds.y;
+
         }
 
-        public void OnDistanceSliderValueChanged() {
-            rectTransform.position = new Vector3(rectTransform.position.x, rectTransform.position.y, distanceBounds.x + (distanceSlider.value * (distanceBounds.y - distanceBounds.x)));
-        }
+        void Update() {
+            scaleSlider.value = ((scaleSlider.maxValue - scaleSlider.minValue) * scaleMapping.value) + scaleSlider.minValue;
+            distanceSlider.value = ((distanceSlider.maxValue - distanceSlider.minValue) * distanceMapping.value) + distanceSlider.minValue;
+            widthHeightSlider.value = ((widthHeightSlider.maxValue - widthHeightSlider.minValue) * widthHeightMapping.value) + widthHeightSlider.minValue;
 
-        public void OnWidthHeightSliderValueChanged() {
-            rectTransform.sizeDelta = new Vector2(widthHeightSlider.value * widthHeightBounds.x, widthHeightSlider.value * widthHeightBounds.y);
+            rectTransform.localScale = new Vector3(scaleSlider.value, scaleSlider.value, rectTransform.localScale.z);
+            rectTransform.position = new Vector3(rectTransform.position.x, rectTransform.position.y, distanceSlider.value);
+            rectTransform.sizeDelta = new Vector2(widthHeightSlider.value, widthHeightSlider.value);
         }
     }
 }

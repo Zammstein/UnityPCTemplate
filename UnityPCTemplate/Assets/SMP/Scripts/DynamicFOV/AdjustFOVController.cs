@@ -10,10 +10,11 @@ namespace SMP.DynamicFOV {
     /// <summary>
     /// Author: Sam Meyer
     /// <summary>
-    /// This class handles all changes made to the players camera fov value.
+    /// This class handles all changes made to control panel' FOV slider(s) and applies the values to the camera of the player.
     /// </summary>
     public class AdjustFOVController : MonoBehaviour {
 
+        #region publics
         /// <summary>
         /// FOV values will be applied to this camera when in vr
         /// </summary>
@@ -30,11 +31,31 @@ namespace SMP.DynamicFOV {
         [Range(0.01f, 4f)]
         public float transitionTime = 1f;
 
+        /// <summary>
+        /// Canvas slider displaying current fov setting.
+        /// </summary>
         public Slider fovSlider;
-        public LinearMapping sliderMapping;
-        public Text fovValueText;
-        public Vector2 fovBounds;
 
+        /// <summary>
+        /// Mapping will be applied to the corresponding slider.
+        /// </summary>
+        public LinearMapping sliderMapping;
+
+        /// <summary>
+        /// UI text element displaying the current value of the corresponding slider.
+        /// </summary>
+        public Text fovValueText;
+
+        /// <summary>
+        /// Bounds set are applied to the corresponding slider
+        /// </summary>
+        public Vector2 fovBounds;
+        #endregion
+
+        /// <summary>
+        /// This camera object is assigned on Start with the VR camera or non-VR camera.
+        /// FOV changes are applied to this.
+        /// </summary>
         private Camera cameraToAdjust;
 
         void Start() {
@@ -43,11 +64,17 @@ namespace SMP.DynamicFOV {
             fovSlider.maxValue = fovBounds.y;
         }
 
+        /// <summary>
+        /// Visual representations are updated with the mapped values.
+        /// </summary>
         void Update() {
             fovSlider.value = Meth.Normalize(sliderMapping.value, fovSlider.maxValue, fovSlider.minValue);
             fovValueText.text = Mathf.Floor(fovSlider.value).ToString();
         }
 
+        /// <summary>
+        /// The 'apply' UI button triggers this method to start applying the fov value currently in the fov slider.
+        /// </summary>
         public void OnApplyFOV() {
             SteamVR_Fade.Start(Color.black, transitionTime / 2);
             Invoke("FadeInAndUpdateFOV", transitionTime / 2);

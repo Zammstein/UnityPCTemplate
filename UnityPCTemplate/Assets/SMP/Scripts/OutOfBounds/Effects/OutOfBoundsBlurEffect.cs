@@ -2,6 +2,14 @@
 using SMP.CameraEffects;
 
 namespace SMP.OutOfBounds {
+
+    /// <summary>
+    /// OutOfBoundsBlurEffect
+    /// <summary>
+    /// Author: Sam Meyer
+    /// <summary>
+    /// The blur effect toggles a camera blur for the player.
+    /// </summary>
     public class OutOfBoundsBlurEffect : OutOfBoundsEffect {
 
         private void Start() {

@@ -4,29 +4,60 @@ using UnityEngine.UI;
 using Valve.VR.InteractionSystem;
 
 namespace SMP.MovingUI {
-    
+
+    /// <summary>
+    /// MovingUIController
+    /// <summary>
+    /// Author: Sam Meyer
+    /// <summary>
+    /// This class handles all changes made to control panel' UI slider(s) and applies the values to a canvas object.
+    /// </summary>
     public class MovingUIController : MonoBehaviour {
 
+        #region publics
         /// <summary>
         /// The canvas on which the transform mutation will be performed;
         /// </summary>
         public RectTransform rectTransform;
 
+        /// <summary>
+        /// Canvas slider displaying current UI plane scale setting.
+        /// Scale does not affect the resolution of the canvas.
+        /// </summary>
         public Slider scaleSlider;
+
+        /// <summary>
+        /// Canvas slider displaying current UI plane distance setting.
+        /// </summary>
         public Slider distanceSlider;
+
+        /// <summary>
+        /// Canvas slider displaying current UI plane width and height setting.
+        /// Width and height affect the canvas' resolution.
+        /// </summary>
         public Slider widthHeightSlider;
 
+        /// <summary>
+        /// Bounds set are applied to the corresponding slider.
+        /// </summary>
         public Vector2 scaleBounds;
         public Vector2 distanceBounds;
         public Vector2 widthHeightBounds;
 
+        /// <summary>
+        /// Mappings will be applied to the corresponding slider.
+        /// </summary>
         public LinearMapping scaleMapping;
         public LinearMapping distanceMapping;
         public LinearMapping widthHeightMapping;
 
+        /// <summary>
+        /// UI text elements displaying the current value of the corresponding sliders.
+        /// </summary>
         public Text scaleValueText;
         public Text distanceValueText;
         public Text widthHeightValueText;
+        #endregion
 
         void Start() {
             scaleSlider.minValue = scaleBounds.x;
@@ -40,6 +71,9 @@ namespace SMP.MovingUI {
 
         }
 
+        /// <summary>
+        /// Visual representations are updated with the mapped values.
+        /// </summary>
         void Update() {
             scaleSlider.value = Meth.Normalize(scaleMapping.value, scaleSlider.maxValue, scaleSlider.minValue);
             distanceSlider.value = Meth.Normalize(distanceMapping.value, distanceSlider.maxValue, distanceSlider.minValue);

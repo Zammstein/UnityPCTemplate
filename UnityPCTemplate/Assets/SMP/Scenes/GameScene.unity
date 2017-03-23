@@ -4630,7 +4630,7 @@ GameObject:
   - component: {fileID: 770919028}
   - component: {fileID: 770919027}
   m_Layer: 0
-  m_Name: OutOfBoundsTrigger (2)
+  m_Name: '[Fade] OutOfBoundsTrigger'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4660,7 +4660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01e124422c75aa48bb22f20d435a270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectType: 0
+  effectType: 2
 --- !u!23 &770919028
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7085,6 +7085,7 @@ GameObject:
   - component: {fileID: 1070439000}
   - component: {fileID: 1070438999}
   - component: {fileID: 1070439001}
+  - component: {fileID: 1070439002}
   m_Layer: 0
   m_Name: OutOfBoundsController
   m_TagString: Untagged
@@ -7139,6 +7140,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: OUT OF BOUNDS!
+--- !u!114 &1070439002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1070438997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6b7debfddc2394293fedb970722050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 0.5
 --- !u!1 &1074894216
 GameObject:
   m_ObjectHideFlags: 0
@@ -7152,7 +7165,7 @@ GameObject:
   - component: {fileID: 1074894218}
   - component: {fileID: 1074894217}
   m_Layer: 0
-  m_Name: OutOfBoundsTrigger
+  m_Name: '[Blur] OutOfBoundsTrigger'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7877,7 +7890,7 @@ GameObject:
   - component: {fileID: 1225975028}
   - component: {fileID: 1225975027}
   m_Layer: 0
-  m_Name: OutOfBoundsTrigger (1)
+  m_Name: '[Text] OutOfBoundsTrigger'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,7 +18,8 @@ namespace SMP.OutOfBounds {
         /// </summary>
         public enum EFFECT_TYPE {
             TEXT_MESSAGE,
-            CAMERA_BLUR
+            CAMERA_BLUR,
+            FADE_TO_BLACK
         }
 
         /// <summary>

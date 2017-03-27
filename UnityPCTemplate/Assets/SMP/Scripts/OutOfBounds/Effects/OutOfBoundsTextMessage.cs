@@ -17,7 +17,7 @@ namespace SMP.OutOfBounds {
         /// </summary>
         public string message = "OUT OF BOUNDS!";
 
-        private void Start() {
+        private void Awake() {
             effectType = EFFECT_TYPE.TEXT_MESSAGE;
         }
 

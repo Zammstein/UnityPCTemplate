@@ -16,7 +16,7 @@ namespace SMP.OutOfBounds {
         /// </summary>
         public float fadeSpeed = 0.5f;
 
-        private void Start() {
+        private void Awake() {
             effectType = EFFECT_TYPE.FADE_TO_BLACK;
         }
 

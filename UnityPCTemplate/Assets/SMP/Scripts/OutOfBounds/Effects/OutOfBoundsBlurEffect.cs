@@ -12,7 +12,7 @@ namespace SMP.OutOfBounds {
     /// </summary>
     public class OutOfBoundsBlurEffect : OutOfBoundsEffect {
 
-        private void Start() {
+        private void Awake() {
             effectType = EFFECT_TYPE.CAMERA_BLUR;
         } 
 

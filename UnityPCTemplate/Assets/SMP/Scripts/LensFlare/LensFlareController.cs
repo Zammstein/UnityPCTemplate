@@ -50,7 +50,7 @@ namespace SMP.DynamicFOV {
         /// Visual representations are updated with the mapped values.
         /// </summary>
         void Update() {
-            brightnessSlider.value = Meth.Normalize(linearMapping.value, brightnessSlider.maxValue, brightnessSlider.minValue);
+            brightnessSlider.value = Meth.NormalizeToScale(linearMapping.value, brightnessSlider.maxValue, brightnessSlider.minValue);
             flare.brightness = brightnessSlider.value;
             brightnessValueText.text = Mathf.Floor(brightnessSlider.value).ToString();
         }

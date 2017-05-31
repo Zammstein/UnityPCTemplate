@@ -75,9 +75,9 @@ namespace SMP.MovingUI {
         /// Visual representations are updated with the mapped values.
         /// </summary>
         void Update() {
-            scaleSlider.value = Meth.Normalize(scaleMapping.value, scaleSlider.maxValue, scaleSlider.minValue);
-            distanceSlider.value = Meth.Normalize(distanceMapping.value, distanceSlider.maxValue, distanceSlider.minValue);
-            widthHeightSlider.value = Meth.Normalize(widthHeightMapping.value, widthHeightSlider.maxValue, widthHeightSlider.minValue);
+            scaleSlider.value = Meth.NormalizeToScale(scaleMapping.value, scaleSlider.maxValue, scaleSlider.minValue);
+            distanceSlider.value = Meth.NormalizeToScale(distanceMapping.value, distanceSlider.maxValue, distanceSlider.minValue);
+            widthHeightSlider.value = Meth.NormalizeToScale(widthHeightMapping.value, widthHeightSlider.maxValue, widthHeightSlider.minValue);
 
             rectTransform.localScale = new Vector3(scaleSlider.value, scaleSlider.value, rectTransform.localScale.z);
             rectTransform.position = new Vector3(rectTransform.position.x, rectTransform.position.y, distanceSlider.value);

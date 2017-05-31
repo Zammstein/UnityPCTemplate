@@ -68,7 +68,7 @@ namespace SMP.DynamicFOV {
         /// Visual representations are updated with the mapped values.
         /// </summary>
         void Update() {
-            fovSlider.value = Meth.Normalize(sliderMapping.value, fovSlider.maxValue, fovSlider.minValue);
+            fovSlider.value = Meth.NormalizeToScale(sliderMapping.value, fovSlider.maxValue, fovSlider.minValue);
             fovValueText.text = Mathf.Floor(fovSlider.value).ToString();
         }
 

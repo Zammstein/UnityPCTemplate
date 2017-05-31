@@ -26,6 +26,15 @@
         /// 2. string: the message to display if argument 1 is true
         /// </summary>
         public const string GLOBAL_TOGGLE_TEXT_MESSAGE = "CAMERA_EFFECTS_GLOBAL_TOGGLE_TEXT_MESSAGE";
+
+        /// <summary>
+        /// Dispatch this to trigger a screen fade.
+        /// 
+        /// Argument(s) required:
+        /// 1. Color: the color to fade to
+        /// 2. float: fading speed in seconds.
+        /// </summary>
+        public const string GLOBAL_FADE_SCREEN = "CAMERA_EFFECTS_GLOBAL_FADE_SCREEN";
     }
 }
 

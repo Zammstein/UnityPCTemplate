@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Core.EventSystem;
+using SMP.CameraEffects;
+using UnityEngine;
 
 namespace SMP.OutOfBounds {
 
@@ -21,11 +23,11 @@ namespace SMP.OutOfBounds {
         }
 
         public override void EndEffect() {
-            SteamVR_Fade.Start(Color.clear, fadeSpeed);
+            EventManager.TriggerEvent(CameraEffectsEventTypes.GLOBAL_FADE_SCREEN, Color.clear, fadeSpeed);
         }
 
         public override void StartEffect() {
-            SteamVR_Fade.Start(Color.black, fadeSpeed);
+            EventManager.TriggerEvent(CameraEffectsEventTypes.GLOBAL_FADE_SCREEN, Color.black, fadeSpeed);
         }
     }
 }
